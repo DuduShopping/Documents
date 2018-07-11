@@ -19,22 +19,6 @@ what he wants. The customer describes what he wants to Dudu Shopping. Dudu Shopp
 Dudu helpers, who registered with Dudu Shopping, provides best item to customers. 
 All items selected by Dudu helpers are good and inexpensive. The customer can select the best and suitable one out of them.
 
-### Get start
-- Clone this project.
-- Install gradle and java 8 or newer
-- Install Microsoft SQL Server. [link](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-overview?view=sql-server-linux-2017)
-- Execute scripts in `sql/DuduShopping/schema`
-- Execute scripts in `sql/DuduShopping/stored procedures`
-- install tomcat or other servlet container. 
-
-### Development Rules 
-- `master` branch only for merging and synchronization for other branches.
-development has to do in other branches. It is recommended for new features to create new branch with descriptive name.
-- All classes should be unit tested as much as possible. see example `src/test/java/com/dudu/payment/StripeManagerTest.java`
-- Write responsible, clean, and readable code.
-
 ### Documentation
 Document as much as possible for future developers to pick up. Write javadoc and comments to indicate usage/intention when
 needed. For higher level concept, write state diagrams and technical document, which must be in the wiki. 
-
-
