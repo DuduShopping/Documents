@@ -41,14 +41,47 @@ Token response
     Cache-Control: no-store
     Pragma: no-cache 
     {
-      "accessToken":"mF_9.B5f-4.1JqM",
-      "tokenType":"Bearer",
-      "expiresIn":3600,
-      "refreshToken":"tGzv3JOkF0XG5Qx2TlKWIA"
+      "token":"mF_9.B5f-4.1JqM",
     }
 ```
+The token is a JWT token string
 
-Refresh tokens are credentials used to obtain access tokens with same scope. Refresh Token has an implicit expiration time, for example double of expiresIn.
+
+## JWT Token
+4.1.1.  "iss" (Issuer) Claim  . . . . . . . . . . . . . . . .   9
+       4.1.2.  "sub" (Subject) Claim . . . . . . . . . . . . . . . .   9
+       4.1.3.  "aud" (Audience) Claim  . . . . . . . . . . . . . . .   9
+       4.1.4.  "exp" (Expiration Time) Claim . . . . . . . . . . . .   9
+       4.1.5.  "nbf" (Not Before) Claim  . . . . . . . . . . . . . .  10
+       4.1.6.  "iat" (Issued At) Claim . . . . . . . . . . . . . . .  10
+       4.1.7.  "jti" (JWT ID) Claim  
+       
+JWT stands for JSON Web Token. It is way to identify a user and his access rights. 
+The RSA512 encrytion algorithm is the choice of signing/verifying the token. 
+The authentication server holds the private key to sign issued tokens to users. 
+Resource servers holds the public key to verify validity of tokens received form users.
+
+The header of token is 
+```
+{
+  "typ": "JWT",
+  "alg": "RS512"
+}
+```
+
+The following registered claims are used:
+
+- iss: issuer name. It will be `dudu`
+- exp: expiration time, in unix time
+- iat: issued at time, in unix time
+- jti: id, must be unique most of time
+
+
+the following private claims are used:
+
+- UserId: user id
+- Scopes: comma delimited values, each value is a scope
+
 
 ## Make Request With Token
 The clients use `Bear` authentication scheme.
@@ -102,13 +135,6 @@ example
     realm="testrealm@host.com",
     scope="costumer,saleAgent”
 ```
-
-## Scopes
-Each API endpoint has one/more scope associated with it. 
-An token is issue with one or more scopes to resource owner. 
-An endpoint can be access only when the owner hold a scope contains it. 
-Endpoints with empty scope can be accessed by any valid tokens.
-
 
 
 
