@@ -7,7 +7,7 @@ ApiEndpoint
 ```
 ApiEndpointId: Interger. Unique identifier
 Method: String. HTTP request method. for example GET, POST
-Endpoint: String. The path of incoming url.
+Endpoint: String. The path of incoming url. It support wildcard `*`. `*` greedly matches any one or more characters except `/`
 IsPrivate: Boolean. true if this API is internal use only. default false
 IsPublic: Boolean. true if this API is open to the Internet without any credentials. default false
 ```
@@ -48,7 +48,12 @@ An example
       "Method": "POST",
       "Endpoint": "/login",
       "IsPublic": true
-    }
+    },
+    {
+      "ApiEndpointId": 2,
+      "Method": "POST",
+      "Endpoint": "/wallet/*/*",
+    },
   ],
   "Scopes": [
     {
