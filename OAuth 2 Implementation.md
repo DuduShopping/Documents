@@ -48,13 +48,6 @@ The token is a JWT token string
 
 
 ## JWT Token
-4.1.1.  "iss" (Issuer) Claim  . . . . . . . . . . . . . . . .   9
-       4.1.2.  "sub" (Subject) Claim . . . . . . . . . . . . . . . .   9
-       4.1.3.  "aud" (Audience) Claim  . . . . . . . . . . . . . . .   9
-       4.1.4.  "exp" (Expiration Time) Claim . . . . . . . . . . . .   9
-       4.1.5.  "nbf" (Not Before) Claim  . . . . . . . . . . . . . .  10
-       4.1.6.  "iat" (Issued At) Claim . . . . . . . . . . . . . . .  10
-       4.1.7.  "jti" (JWT ID) Claim  
        
 JWT stands for JSON Web Token. It is way to identify a user and his access rights. 
 The RSA512 encrytion algorithm is the choice of signing/verifying the token. 
