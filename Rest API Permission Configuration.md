@@ -7,7 +7,7 @@ ApiEndpoint
 ```
 ApiEndpointId: Interger. Unique identifier
 Method: String. HTTP request method. for example GET, POST
-Endpoint: String. The path of incoming url.
+Endpoint: String. The path of incoming url. It support wildcard `*`. `*` greedly matches any one or more characters except `/`
 IsPublic: Boolean. true if this API is open to the Internet without any credentials. default false
 ```
 
