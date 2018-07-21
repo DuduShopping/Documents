@@ -58,7 +58,7 @@ The header of token is
 ```
 {
   "typ": "JWT",
-  "alg": "RSA"
+  "alg": "RS256"
 }
 ```
 
@@ -76,8 +76,9 @@ the following private claims are used:
 - Scopes: comma delimited values, each value is a scope
 
 JWT encodes header and claims into Base64url format respectively.
-The claims is signed by the private key, and the signature encoded by Base64url.
-Encoded header, claims and signature are then concatenate with `.`. for exmaple:
+The claims hashed by sha256, and then signed by the private key.
+The signature is encoded by Base64url. The encoded header, claims and 
+signature are then concatenate with `.`. for exmaple:
 
 ```
 eyJ0eXAiOiJzI1NiJ9.eyJpc3MiOiJqb2UUJU1p1r_wiLA0VlfQ.dBjftJeZUJU1p1r_wW1gFWFOEjXk
