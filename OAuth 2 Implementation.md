@@ -50,7 +50,7 @@ The token is a JWT token string
 ## JWT Token
        
 JWT stands for JSON Web Token. It is way to identify a user and his access rights. 
-The RSA512 encrytion algorithm is the choice of signing/verifying the token. 
+The RSA encrytion algorithm is the choice of signing/verifying the token. 
 The authentication server holds the private key to sign issued tokens to users. 
 Resource servers holds the public key to verify validity of tokens received form users.
 
@@ -58,7 +58,7 @@ The header of token is
 ```
 {
   "typ": "JWT",
-  "alg": "RS512"
+  "alg": "RSA"
 }
 ```
 
@@ -74,6 +74,17 @@ the following private claims are used:
 
 - UserId: user id
 - Scopes: comma delimited values, each value is a scope
+
+JWT encodes header and claims into Base64url format respectively.
+The claims is signed by the private key, and the signature encoded by Base64url.
+Encoded header, claims and signature are then concatenate with `.`. for exmaple:
+
+```
+eyJ0eXAiOiJzI1NiJ9.eyJpc3MiOiJqb2UUJU1p1r_wiLA0VlfQ.dBjftJeZUJU1p1r_wW1gFWFOEjXk
+```
+
+To verifying a token, first the token is decoded with Base64url. Then the pubilc key
+verifying the signature. 
 
 
 ## Make Request With Token
