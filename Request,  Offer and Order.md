@@ -11,27 +11,27 @@
                  v                     v
           |-------------|        |-------------|        |----------|       
           |  Request    |        |   Request   |        | Request  |        
-          |  Cancelled  |<-------|   Accepted  |------->| Matched  |                                                
+          |  Cancelled  |<-------|   Accepted  |------->| Matched  |      
           |  (SR10)     |        |   (SR15)    |        | (SR30)   |      
           |-------------|        |-------------|        |----------|
 ```
 
 ### Offer State
 ```
-                 |-------------|
-                 |  Offer      |
-                 |  Pending    |
-                 |  (SF5)      |
-                 |-------------|
+                 |-------------|         |---------|
+                 |  Offer      |         | Offer   |
+                 |  Pending    |-------->| Matched |
+                 |  (SF5)      |         | (SF35)  |
+                 |-------------|         |---------|
                    /          \
                   /            \
                  /              \
                 v                v
-          |----------|        |---------|         |---------|
-          | Shopper  |        | Offer   |         | Offer   |
-          | Rejected |        | pulled  |-------->| Matched |
-          | (SF20)   |        | (SF15)  |         | (SF35)  |
-          |----------|        |---------|         |---------|
+          |----------|        |---------|
+          | Shopper  |        | Offer   |
+          | Rejected |        | pulled  |
+          | (SF20)   |        | (SF15)  |
+          |----------|        |---------|
 ```
 
 ### Match and Order Stage
