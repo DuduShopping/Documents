@@ -21,4 +21,11 @@ orderUpdate.
 }
 ```
 
+orderPaid
+```
+{
+  "orderId": "number.required" 
+}
+```
+
 
